@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pet Adoption Center</title>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "pets", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= "Pet Adoption Center" %>
+  </div>
+
+  <div id="columns">
+    <div id="side">
+      <div id="consider">
+	<% if @consider %>
+          <%= hidden_div_if(@consider.line_pets.empty?, id: 'consider') do %>
+            <%= render @consider unless @consider.line_pets == nil %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <ul>
+        <%= link_to "Foster Home Page", foster_path %><br/>
+        <%= link_to "Pet Actions", pets_path %><br/>
+        <a href="http://www.google.com">Google Search</a><br/>
+        <a href="http://eecs.mines.edu">EECS Home</a>
+      </ul>
+    </div>
+
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>
