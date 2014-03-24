@@ -2,25 +2,8 @@
 
 ##Based on Anastasia Shpurik's Unit 6 Work
 
-##Things to do 
--------------------------
-+Maria
- -Linking Pet from confirmed page 			[ ]
- -Testing									[ ]
+*See https://github.com/eternalearth888/csci446_team/issues for current list of issues*
 
-+Andrew
- -Get Ajax to work on picture click			[ ]
-   +Only adds one pet via picture click		[ ]
- -Delete stuff 								[X]
-
- +Anastasia
-	-TBD
-
-
- +LEFT
- 	-Atom Feeds								[ ]
-	-Making only available pets show on
-	 homepage								[ ]
 
 ##Requirements
 -------------------------------
