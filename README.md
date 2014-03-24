@@ -1,4 +1,4 @@
-#Maria Deslis | Anastasia Shpurik | Andrew Koelling
+###Maria Deslis | Anastasia Shpurik | Andrew Koelling
 
 Team Assignments
 
