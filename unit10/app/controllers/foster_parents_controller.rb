@@ -15,7 +15,6 @@ class FosterParentsController < ApplicationController
   # GET /foster_parents/new
   def new
     @foster_parent = FosterParent.new(:pet_id => params[:pet_id])
-    @pet = Pet.find(params[:pet_id].to_i)
   end
 
   # GET /foster_parents/1/edit

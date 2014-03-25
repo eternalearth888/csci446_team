@@ -4,10 +4,10 @@ one:
   name: MyString
   address: MyText
   email: MyString
-  pet_id: 
+  pet_id: 1
 
 two:
   name: MyString
   address: MyText
   email: MyString
-  pet_id: 
+  pet_id: 1
