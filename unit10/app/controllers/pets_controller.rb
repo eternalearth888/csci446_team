@@ -2,6 +2,15 @@ class PetsController < ApplicationController
   helper_method :sort_column, :sort_direction
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
+
+	def who_adopted
+		@pet = Pet.find(params[:id])
+		respond_to do |format|
+			format.atom
+			format.xml {render :xml => @pet }
+		end
+	end
+
   # GET /pets
   # GET /pets.json
   def index
