@@ -23,9 +23,8 @@
     <%= f.label :email %><br>
     <%= f.text_field :email, size: 40 %>
   </div>
-  <div class="field" hidden value= <%= :pet_id %> >
-    <%= f.label :pet_id %><br>
-    <%= f.text_field :pet_id %>
+  <div class="field" hidden>
+    <%= f.hidden_field :pet_id, :value => params["pet_id"] %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
