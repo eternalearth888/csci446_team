@@ -27,7 +27,7 @@ class LinePetsController < ApplicationController
   # POST /line_pets.json
   def create
     pet = Pet.find(params[:pet_id])
-    @line_pet = @consider.line_pets.build(pet: pet)
+    @line_pet = @consider.add_pet(pet.id)
 
     respond_to do |format|
       if @line_pet.save
