@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-
 one:
+  id: 0
   name: MyString
   breed: MyString
   image_url: MyString
@@ -10,6 +10,7 @@ one:
   status: MyString
 
 two:
+  id: 1
   name: MyString
   breed: MyString
   image_url: MyString
@@ -18,6 +19,7 @@ two:
   status: MyString
 
 ruby:
+  id: 3
   name: Ruby
   breed: Kitty
   image_url: ruby_kitty.gif
