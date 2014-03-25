@@ -1,5 +1,6 @@
 class Pet < ActiveRecord::Base
   has_many :line_pets
+  has_one :foster_parent
   STATUS_TYPES = [ "Available", "Fostered" ]
 
   before_destroy :ensure_not_referenced_by_any_line_pet
