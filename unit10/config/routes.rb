@@ -8,7 +8,9 @@ Pets::Application.routes.draw do
   get "foster/index"
   post "foster/agreement"
   post "foster_parents/new"
-  resources :pets
+  resources :pets do
+		get :who_adopted, :on => :member
+	end
  
 
   # The priority is based upon order of creation: first created -> highest priority.
