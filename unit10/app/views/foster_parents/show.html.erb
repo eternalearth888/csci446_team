@@ -17,7 +17,7 @@
 
 <p>
   <strong>Pet:</strong>
-  <%= @foster_parent.pet_id %>
+  <%= link_to 'Show Pet', pet_path(@foster_parent.pet_id) %>
 </p>
 
 <%= link_to 'Edit', edit_foster_parent_path(@foster_parent) %> |
