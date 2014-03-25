@@ -5,13 +5,14 @@ class Pet < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_line_pet
 
-  validates :name, :breed, :age, :habits, :status, :presence  => true
+  validates :name, :breed, :age, :habits, presence: true
   validates :age, :numericality => {:greater_than => 0.00, :less_than => 30.00}
   validates :image_url, allow_blank: true, :format => {
     :with => %r{.(gif|jpg|png)\z}i,
     :message => 'must be a .gif, .jpg, or .png format.'
   }
-  validates :status, inclusion: STATUS_TYPES
+  #validates :status, presence: true, inclusion: STATUS_TYPES
+  validates :status, :inclusion => { :in => ["Available", "Fostered"] }
 
   def self.latest
     Pet.order(:updated_at).last

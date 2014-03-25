@@ -10,7 +10,6 @@ class PetTest < ActiveSupport::TestCase
     assert pet.errors[:breed].any?
     assert pet.errors[:age].any?
     assert pet.errors[:habits].any?
-    assert pet.errors[:status].any?
   end
 
   test "pet age must be valid" do
