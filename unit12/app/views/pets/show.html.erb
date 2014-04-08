@@ -1,3 +1,6 @@
+<% if current_user.isadmin? %>
+
+
 <p id="notice"><%= notice %></p>
 
 <table>
@@ -34,3 +37,7 @@
 </table>
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
+
+<% else %>
+<h1>You shall not pass</h1>
+<% end %>

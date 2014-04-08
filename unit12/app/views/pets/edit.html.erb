@@ -1,6 +1,12 @@
+<% if current_user.isadmin? %>
+
 <h1>Editing pet</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @pet %> |
 <%= link_to 'Back', pets_path %>
+
+<% else %>
+<h1> You shall not pass </h1>
+<% end %>

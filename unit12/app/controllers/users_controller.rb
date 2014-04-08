@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_filter :require_login
+  skip_before_filter :require_login, only: [:new, :create]
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -36,6 +40,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /users/1

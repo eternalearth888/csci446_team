@@ -1,4 +1,7 @@
 class FosterParentsController < ApplicationController
+
+  before_filter :require_login
+
   before_action :set_foster_parent, only: [:show, :edit, :update, :destroy]
 
   # GET /foster_parents

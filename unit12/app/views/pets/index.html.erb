@@ -1,3 +1,5 @@
+<% if current_user.isadmin? %>
+
 <div id="pet_list">
 
 <h1>Pet Listing</h1>
@@ -40,3 +42,7 @@
 <br>
 
 <%= link_to 'New Pet', new_pet_path %>
+
+<% else %>
+<h1> You shall not pass </h1>
+<% end %>

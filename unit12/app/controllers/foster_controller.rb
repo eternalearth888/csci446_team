@@ -1,4 +1,5 @@
 class FosterController < ApplicationController
+
   include CurrentConsider
   before_action :set_consider
   def index
