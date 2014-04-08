@@ -22,7 +22,9 @@
         <td><%= user.isadmin %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
+				<% if current_user.isadmin? and user.username != current_user.username%> <%#only admins can remove users, and only other admins, never themselves(ensures at least one admin)%>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<%end%>
       </tr>
     <% end %>
   </tbody>
