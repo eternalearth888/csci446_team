@@ -4,20 +4,54 @@
 
 <h1>Furries Looking for Homes</h1>
 
-<% cache ['foster', Pet.latest] do %>
-  <% @pets.each do |pet| %>
-    <% cache ['entry', pet] do %>
-      <div class="entry">
-        <%= image_tag(pet.image_url, :height => '250px') %>
-        <h3><%= pet.name %></h3>
-        <%= sanitize(pet.habits) %><br/>
-        <h4>Age: <%= pet.age %></h4>
-        <div class="breed_line">
-          <span class="breed">Breed: <%= pet.breed %></span>
-          <%= button_to "Foster #{pet.name}", foster_agreement_path(:pet_id => pet.id) %> 
-          <%= button_to 'Considering', line_pets_path(pet_id: pet), remote: true %>
-        </div><br/>
-      </div>
-    <% end %>
-  <% end %>
-<% end %>
+
+<table>
+	<% cache ['foster', Pet.latest] do %>
+		<% @pets.each do |pet| %>
+			<% cache ['entry', pet] do %>
+				<thead id="pet name">
+					<tr>
+						<td colspan="2">
+							<h3><%= pet.name %></h3>
+						</td>
+					</tr>
+				</thead>
+				<tr>
+					<td>
+						<%= image_tag(pet.image_url, :height => '250px', :class => 'list_image') %>
+					</td<>
+					<td>
+						<table>
+							<tr>
+								<td width="50px"><b>Age</b></td>
+								<td align="left"><%= pet.age %></td>
+							</tr>
+							<tr>
+								<td><b>Breed</b></td>
+								<td align="left"><%= pet.breed %></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<b>Habits</b>
+								</td>
+							<tr>
+							<tr>
+								<td colspan="2">
+									<p><%= sanitize(pet.habits) %></p>
+								</td>
+							<tr>
+							<tr>
+								<td align="r">
+										<%= button_to "Foster #{pet.name}", foster_agreement_path(:pet_id => pet.id) %>
+								</td>
+								<td align="center">
+										<%= button_to 'Considering', line_pets_path(pet_id: pet), remote: true %>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			<% end %>
+		<% end %>
+	<% end %>
+</table>

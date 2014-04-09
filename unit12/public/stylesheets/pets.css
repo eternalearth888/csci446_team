@@ -29,6 +29,11 @@
   background: #D78B7D;
 }
 
+.list_image {
+	width: 100px;
+	height: 200px;
+	border-radius: 2em;
+}
 
 /*body {
   font-size: 12px;
