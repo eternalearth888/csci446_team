@@ -18,7 +18,7 @@
 				</thead>
 				<tr>
 					<td>
-						<%= image_tag(pet.image_url, :height => '250px', :class => 'list_image') %>
+						<%= image_tag(pet.image_url, :width=>'210px', :height=>'250px', :class => 'list_image') %>
 					</td<>
 					<td>
 						<table>
@@ -41,10 +41,10 @@
 								</td>
 							<tr>
 							<tr>
-								<td align="r">
+								<td>
 										<%= button_to "Foster #{pet.name}", foster_agreement_path(:pet_id => pet.id) %>
 								</td>
-								<td align="center">
+								<td align="left">
 										<%= button_to 'Considering', line_pets_path(pet_id: pet), remote: true %>
 								</td>
 							</tr>
