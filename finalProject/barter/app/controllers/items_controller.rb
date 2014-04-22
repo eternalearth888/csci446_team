@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
+		@item.user_id = current_user.id
     uploader = ItemImageUploader.new
     uploader.store!(item_params[:itemimage])
 
@@ -74,6 +74,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :description, :itemimage)
+      params.require(:item).permit(:title, :description, :itemimage, :user_id)
     end
 end

@@ -16,6 +16,8 @@
       <tr>
         <td><%= item.title %></td>
         <td><%= item.description %></td>
+				<td><%= image_tag(item.itemimage, :width =>'120px', :height =>'120px') %></td>
+				<td><%= item.user_id %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
