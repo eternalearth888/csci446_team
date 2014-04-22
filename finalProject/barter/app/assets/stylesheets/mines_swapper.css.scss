@@ -1,0 +1,27 @@
+// Place all the styles related to the MinesSwapper controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mines_swapper {
+	.entry {
+		overflow: auto;
+		margin-top: 1em;
+		border-bottom: 1px dotted #77d;
+		min-height: 100px;
+
+		h3 {
+			font-size: 120%;
+			font-family: sans-serif;
+			margin-left: 100px;
+			margin-top: 0;
+			margin-bottom: 2px;
+			color: #227;
+		}
+
+		p {
+			margin-left: 100px;
+			margin-top: 0.5em;
+			margin-bottom: 0.8em;
+		}
+	}
+}

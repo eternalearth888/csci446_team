@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Barter</title>
+  <title>MinesSwapper Bartering System</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
+<body class="<%= controller.controller_name %>">
+	<div id="banner">
+		<%= @page_title || "MinesSwapper" %>
+	</div>
+	<div id="columns">
+		<div id="side">
+			<u1>
+				<li><a href="http://www.google.com">Google</a></li>
+			</u1>
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
 
 </body>
 </html>

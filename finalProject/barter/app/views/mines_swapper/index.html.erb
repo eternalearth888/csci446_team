@@ -1,0 +1,12 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1> MinesSwapper</h1>
+
+<% @items.each do |item| %>
+	<div class="entry">
+		<h3><%= item.title %></h3>
+		<%= sanitize(item.description) %>
+	</div>
+<% end %>

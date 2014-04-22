@@ -1,11 +1,13 @@
 Barter::Application.routes.draw do
+  get "mines_swapper/index"
   resources :items
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'mines_swapper#index', as: 'mines_swapper'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
