@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+
+	<% if !current_user or @user.username == current_user.username or current_user.isadmin?%>
   <div class="field">
     <%= f.label :username %><br>
     <%= f.text_field :username %>
@@ -23,7 +25,14 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>
+  <% if current_user.isadmin %>
+  <div class="field">
+	<%= f.label "Make Admin" %>
+	<%= f.check_box :isadmin %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
-  </div>
+	</div>
+<%end%>
 <% end %>
