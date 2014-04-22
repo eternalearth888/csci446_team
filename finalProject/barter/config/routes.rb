@@ -1,4 +1,6 @@
 Barter::Application.routes.draw do
+  resources :users
+
   get "mines_swapper/index"
   resources :items
 
