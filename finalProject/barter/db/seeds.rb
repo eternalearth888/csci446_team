@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Item.create!(title: 'Calculus I textbook',
+	description: 'I don''t need my book this weekend, so somebody can borrow it')
