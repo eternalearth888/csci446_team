@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+<table>
+	<thead>
+		<tr>
+			<td><%= @item.title %></td>
+		</tr>
+	</thead>
+	<tr>
+		<td><%= image_tag(@item.itemimage, :class => 'item_image') %></td>
+		<td><%= @item.description %></td>
+	</tr>
+</table>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
