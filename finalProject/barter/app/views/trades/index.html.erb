@@ -22,7 +22,13 @@
         <td><%= User.find_by_id(trade.user2).username %></td>
         <td><%= Item.find_by_id(trade.user1_item).title %></td>
         <td><%= Item.find_by_id(trade.user2_item).title %></td>
-        <td><%= trade.status %></td>
+				<% if trade.status == 0 %>
+       	 <td>Pending</td>
+			 <%elsif trade.status == 1 %>
+				 <td>Accepted</td>
+			 <%elsif trade.status == 2 %>
+				 <td>Declined</td>
+			 <%end%>
         <td><%= trade.description %></td>
         <td><%= link_to 'Show', trade %></td>
         <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
