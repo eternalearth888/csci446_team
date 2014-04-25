@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tradee:</strong>
+  <%= User.find_by_id(@trade.user1).username %>
+</p>
+
+<p>
+  <strong>Trader:</strong>
+  <%= User.find_by_id(@trade.user2).username %>
+</p>
+
+<p>
+  <strong>Trading for:</strong>
+  <%= Item.find_by_id(@trade.user1_item).title %>
+</p>
+
+<p>
+  <strong>Offering:</strong>
+  <%= Item.find_by_id(@trade.user2_item).title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <% if @trade.status == 0 %>
+		Pending
+	<% elsif @trade.status == 1 %>
+		Accept
+	<% elsif @trade.status == 2 %>
+		Declined
+	<%end%>
+</p>
+
+<p>
+  <strong>Description of Trade:</strong>
+  <%= @trade.description %>
+</p>
+
+<%= link_to 'Edit', edit_trade_path(@trade) %> |
+<%= link_to 'Back', trades_path %>

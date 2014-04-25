@@ -1,0 +1,37 @@
+<h1>Listing trades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tradee</th>
+      <th>Trader(person started trade)</th>
+      <th>Trading for</th>
+      <th>Offering</th>
+      <th>Status</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trades.each do |trade| %>
+      <tr>
+        <td><%= User.find_by_id(trade.user1).username %></td>
+        <td><%= User.find_by_id(trade.user2).username %></td>
+        <td><%= Item.find_by_id(trade.user1_item).title %></td>
+        <td><%= Item.find_by_id(trade.user2_item).title %></td>
+        <td><%= trade.status %></td>
+        <td><%= trade.description %></td>
+        <td><%= link_to 'Show', trade %></td>
+        <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
+        <td><%= link_to 'Destroy', trade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trade', new_trade_path %>
