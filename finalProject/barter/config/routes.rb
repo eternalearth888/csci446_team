@@ -1,4 +1,7 @@
 Barter::Application.routes.draw do
+  get "notice", to: 'notice#index', as: 'notice'
+  resources :trades
+
   get "user_sessions/new"
   get "user_sessions/create"
   get "user_sessions/destroy"
