@@ -9,19 +9,20 @@
 
 #homeItemImage img {
 	width: 100px;
-	height: 125px;
+	height: 120px;
 }
 
-#homeRight {
-	width: 100px;
+#homeLeft {
+	text-align: center;
+	vertical-align: top;
 }
 
 #homeEntries {
-	display:inline-block;
+	display: inline-block;
 	border: 1px solid gray;
-	margin: .5em;
+	margin: auto;
 	border-radius: 1em;
-	width: 200px;
+	width: 175px;
 	height: 200px;
 
 	background: #feffff; /* Old browsers */

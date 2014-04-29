@@ -5,7 +5,7 @@
 <h1>Random Trades</h1>
 <table id="homeListings">
 	<tr>
-		<td>
+		<td id="homeLeft">
 			<% @items.each do |item| %>
 				<table id="homeEntries">
 					<thead>
@@ -17,18 +17,13 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id="homeItemImage">
+							<td align="center" id="homeItemImage">
 								<%= image_tag(item.itemimage) %>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			<% end %>
-		</td>
-		<td id="homeRight">
-			RIGHT SIDE
-			<br />
-			FOR JUNK AND SHIT
 		</td>
 	</tr>
 </table>
