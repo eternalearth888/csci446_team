@@ -1,0 +1,48 @@
+commit 7baab75aef4dfebc3da8528fc4abe521a419cf77
+Author: Drew Koelling <akoellin@mymail.mines.edu>
+Date:   Tue Apr 22 12:02:31 2014 -0600
+
+    got new items to get the key of the user when the created to support the connection of users to items. Also destroying a user will destroy all connected items to that user
+
+commit 4c21db990d0c6348776e8bb43afe6a3a586084cb
+Author: Anastasia Shpurik <ashpurik@mines.edu>
+Date:   Mon Apr 21 23:07:13 2014 -0600
+
+    got carrierwave working for image uploads, working with Maria
+
+commit 99e10f9945d2f4afb8dc6e2089760349d9832104
+Author: Anastasia Shpurik <ashpurik@mines.edu>
+Date:   Mon Apr 21 22:04:15 2014 -0600
+
+    added user sessions, working with Drew & Maria
+
+commit 57bfcad5f4e378b8a066761c312ac54e82a04cc5
+Author: Anastasia Shpurik <ashpurik@mines.edu>
+Date:   Mon Apr 21 21:47:43 2014 -0600
+
+    created new users, working with Maria & Drew
+
+commit cf1b7766ae9584f07fb7cde2146c49f0cd08bc83
+Author: Anastasia Shpurik <ashpurik@mines.edu>
+Date:   Mon Apr 21 21:28:04 2014 -0600
+
+    added skeleton homepage and some html and css, working with Drew & Maria
+
+commit 1504abb3eb080c845e227ef51812f0094bc2356d
+Author: Anastasia Shpurik <ashpurik@mines.edu>
+Date:   Mon Apr 21 21:06:00 2014 -0600
+
+    created new item and some tests, Maria and Drew working with me
+
+commit 352ac8324a10f7dd7d564fdfb2475b75eb01725d
+Merge: 87cf4fb b759148
+Author: Anastasia Shpurik <ashpurik@mines.edu>
+Date:   Mon Apr 21 19:49:56 2014 -0600
+
+    Merge branch 'master' of https://github.com/eternalearth888/csci446_team
+
+commit 87cf4fb2be1294617643d76865fcf285d62d75b1
+Author: Anastasia Shpurik <ashpurik@mines.edu>
+Date:   Mon Apr 21 19:49:28 2014 -0600
+
+    created new project for final
