@@ -8,13 +8,15 @@
 </head>
 <body class="<%= controller.controller_name %>">
 	<div id="banner">
-		<%= @page_title || "MinesSwapper" %>
+		<img id="logo" src="ms_logo.png" /><%= @page_title || "MinesSwapper" %>
 	</div>
 	<nav>
-		<ul>
+		<ul id="regNav">
 			<li>
 				<a href="/items">Items</a>
 			</li>
+		</ul>
+		<ul id="userNav">
 			<li>
 				<% if current_user %>
 					<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
@@ -39,7 +41,7 @@
 		</section>
 	</div>
 	<footer>
-		Copyright &copy; 2014 | Maria Deslis | Andrew Koelling | Anastasia Shpurik
+		Copyright &copy; 2014 | Maria Deslis | Andrew Koelling | Anastasia Shpurik <a href="http://eecs.mines.edu/Courses/csci446/" target="_blank">CSCI 446</a>
 	</footer>
 </body>
 </html>
