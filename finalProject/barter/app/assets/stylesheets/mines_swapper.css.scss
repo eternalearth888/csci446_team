@@ -12,3 +12,22 @@
 #seperate td{
 	vertical-align: top;
 }
+
+#homeListings {
+	border: 1px solid red;
+	width: 100%;
+	margin: auto;
+}
+
+#homeListings td {
+	border: 1px solid yellow;
+}
+
+#homeItemImage img {
+	width: 120px;
+	height: 120px;
+}
+
+#homeRight {
+	width: 100px;
+}
