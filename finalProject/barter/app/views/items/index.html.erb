@@ -36,6 +36,8 @@
       <%= link_to 'Edit', edit_item_path(item) %>
       |
       <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+      |
+      <%= link_to 'Request', new_trade_path(:item_id => item.id) %>
     </td>
   </tr>
 </table>
