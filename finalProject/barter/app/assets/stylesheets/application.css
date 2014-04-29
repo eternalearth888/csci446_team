@@ -117,7 +117,7 @@ footer {
 }
 
 /**LINKS**/
-a {
+nav ul li a {
 	text-decoration: none;
 	color: #01A9DB;
 	background-color: none;

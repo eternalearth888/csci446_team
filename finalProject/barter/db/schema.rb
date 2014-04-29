@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424224619) do
+ActiveRecord::Schema.define(version: 20140429044758) do
 
   create_table "items", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140424224619) do
     t.datetime "updated_at"
     t.string   "itemimage"
     t.integer  "user_id"
+    t.boolean  "isavailable", default: true
   end
 
   create_table "trades", force: true do |t|

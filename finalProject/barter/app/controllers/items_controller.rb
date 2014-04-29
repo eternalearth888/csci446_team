@@ -31,6 +31,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    @item.update_attribute(:isavailable, true)
 		@item.user_id = current_user.id
     uploader = ItemImageUploader.new
     uploader.store!(item_params[:itemimage])

@@ -47,9 +47,14 @@ class TradesController < ApplicationController
   # PATCH/PUT /trades/1
   # PATCH/PUT /trades/1.json
   def update
+
+    if update_params[:status].to_i == 1
+      Item.find_by_id(@trade.user1_item).update_attribute(:isavailable, false)
+      Item.find_by_id(@trade.user2_item).update_attribute(:isavailable, false)
+    end
     respond_to do |format|
       if @trade.update(update_params)
-        format.html { redirect_to @trade, notice: 'Trade was successfully updated.' }
+        format.html { redirect_to @trade, notice: "Trade was successfully updated."  }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

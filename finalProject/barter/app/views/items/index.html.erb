@@ -1,6 +1,6 @@
 <h1>Browsing Available items</h1>
  <% @items.each do |item| %>
-
+ <% if item.isavailable? %>
 <table id="itemDisplay">
   <thead>
     <tr>
@@ -10,7 +10,6 @@
       <td colspan="2" id="itemDate">Created On: <%= item.created_at %></td>
     </tr>
   </thead>
-
   <tbody>
       <tr>
         <td id="itemImage"><%= image_tag(item.itemimage, :width =>'120px', :height =>'120px') %></td>
@@ -48,7 +47,8 @@
     </td>
   </tr>
 </table>
-    <% end %>
+  <% end %>
+<% end %>
 <br>
 
 <%= link_to 'New Item', new_item_path %>
