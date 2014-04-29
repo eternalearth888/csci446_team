@@ -1,13 +1,21 @@
 <h1>Notice page for <%=current_user.username%></h1>
 
-<h3>Here are trades offered to you(Trades this user has recieved)</h3>
 <table id='recievedTable'>
-	<tr>
-		<td>User your trying to trade with</td>
-		<td>What they want</td>
-		<td>What they're offering</td>
-		<td>Message given on trade(trade description)</td>
-	</tr>
+	<thead>
+		<tr>
+			<td  id="thead1" colspan="4">
+				<h2>Trades you have recieved</h2>
+			</td>
+		</tr>
+	</thead>
+	<thead id="thead2">
+		<tr>
+			<td>User</td>
+			<td>Your Item</td>
+			<td>Their Offer</td>
+			<td>Description</td>
+		</tr>
+	</thead>
 	<%#recieving trades should not be over 20%>
 	<%#Trade.where(id = value) will return a database relation object which you can call take(n) to take up to n entries from and are put in an array %>
 	<%Trade.where("user1 = #{current_user.id} and status=0").take(20).each do |trade| %>
@@ -22,16 +30,22 @@
 	<%end%>
 </table>
 
-
-<hr>
-<h3>Here are your current pending trades(Trades this user sent)</h3>
 <table id='pendingTable'>
-	<tr>
-		<td>User your trying to trade with</td>
-		<td>What your trying to trade for</td>
-		<td>What your offering</td>
-		<td>Message you gave on trade(trade description)</td>
-	</tr>
+	<thead>
+		<tr>
+			<td  id="thead1" colspan="4">
+				<h2>Trades you sent</h2>
+			</td>
+		</tr>
+	</thead>
+	<thead id="thead2">
+		<tr>
+			<td>User</td>
+			<td>Their Item</td>
+			<td>Your Offer</td>
+			<td>Description</td>
+		</tr>
+	</thead>
 	<%#pending trades should not be over 20%>
 	<%#Trade.where(id = value) will return a database relation object which you can call take(n) to take up to n entries from and are put in an array %>
 	<%Trade.where("user2 = #{current_user.id} and status=0").take(20).each do |trade| %>
