@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <div class="field">
-    <% items_array = Item.all(:conditions => ['user_id in (?)', current_user.id]).map { |t| [t.title, t.id]} %>
+    <% items_array = Item.all(:conditions => ['user_id in (?) and isavailable=?', current_user.id, true]).map { |t| [t.title, t.id]} %>
     <%= f.select :user2_item, items_array, prompt: 'Select an item to trade' %>
   </div>
   <div class="field">
