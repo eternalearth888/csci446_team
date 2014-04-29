@@ -1,50 +1,103 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*= require_tree .
+*/
+html {
+	padding: 0;
+	margin: 0;
+	height: 99.5%;
+	background-color: #0681C2;
+}
 
- #banner {
- 	backgroundj: #9c9;
- 	padding: 10px;
- 	border-bottom: 2px solid;
- 	font: small-caps 40px/40px "Times New Roman", serif;
- 	color: #282;
- 	text-align: center;
- }
+body {
+	margin: auto;
+	color: #1a1a1a;
+}
 
- #columns {
- 	background: #141;
- }
+#banner {
+	padding: 10px;
+	font: small-caps 40px/40px "Times New Roman", serif;
+	text-align: center;
+	color: #0681C2;
+}
 
- 	#main {
- 		margin-left: 17em;
- 		padding: 1em;
- 		background: white;
- 	}
+nav {
+	vertical-align: middle;
+	text-align: center;
+}
 
- 	#side {
- 		float: left;
- 		padding: 1em 2em;
- 		width: 13em;
- 		background: #141;
+nav ul {
+	padding: 0 2em;
+	list-style: none;
+	position: relative;
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none;
+}
 
- 		u1 {
- 			padding: 0;
- 			li {
- 				list-style: none;
- 				a {
- 					color: #bfb;
- 					font-size: small;
- 				}
- 			}
- 		}
- }
+nav ul li{
+	margin-left: .2em;
+	margin-right: .2em;
+	float: left;
+	display: inline-block;
+}
+
+nav ul li a {
+	display: block;
+	padding: .1em .5em .1em .5em;
+}
+
+nav ul li {
+	position: relative;
+}
+
+#content {
+	background-color: #00BABD;
+}
+
+section {
+	width: 75%;
+	min-width: 600px;
+	margin: auto;
+	padding: 1em;
+	background-color: white;
+}
+
+footer {
+	background-color: #0681C2;
+	color: #1a1a1a;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: .5em;
+}
+
+/**BLOCK**/
+.block {
+	background: rgba(221,186,63,.6);
+	position: absolute;
+	width: 100%;
+	height: 30px;
+}
+
+/**LINKS**/
+a {
+	text-decoration: none;
+	color: #01A9DB;
+}
+
+a:link, a:visited {
+	color: #084B8A;
+}
+
+a:hover, a:focus {
+	color: #A9E2F3;
+}

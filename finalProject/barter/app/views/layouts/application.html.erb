@@ -10,23 +10,36 @@
 	<div id="banner">
 		<%= @page_title || "MinesSwapper" %>
 	</div>
-	<div id="columns">
-		<div id="side">
-			<u1>
-				<li><a href="http://www.google.com">Google</a></li>
-			</u1>
-			<% if current_user %>
-				<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+	<nav>
+		<ul>
+			<li>
+				<a href="/items">Items</a>
+			</li>
+			<li>
+				<% if current_user %>
+					<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+			</li>
+			<li>
 				<%= link_to "Logout", :logout, method: :post %> 
-			<% else %>
-				<%= link_to "Register", new_user_path %>
+			</li>
+			<li>
+				<% else %>
+					<%= link_to "Register", new_user_path %>
+			</li>
+			<li>
 				<%= link_to "Login", :login %>
+			</li>
 			<% end %>
-		</div>
-		<div id="main">
+		</ul>
+	</nav>
+	<div id="content">
+		<div class="block"></div>
+		<section>
 			<%= yield %>
-		</div>
+		</section>
 	</div>
-
+	<footer>
+		Copyright &copy; 2014 | Maria Deslis | Andrew Koelling | Anastasia Shpurik
+	</footer>
 </body>
 </html>

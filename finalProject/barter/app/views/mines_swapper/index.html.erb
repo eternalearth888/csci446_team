@@ -2,11 +2,37 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1> MinesSwapper</h1>
-
 <% @items.each do |item| %>
 	<div class="entry">
-		<h3><%= item.title %></h3>
-		<%= sanitize(item.description) %>
+		<table id="itemDisplay">
+			<thead>
+				<tr>
+					<td colspan="2"><h3><%= item.title %></h3></td>
+				</tr>
+			</thead>
+			<tr>
+				<td id="itemImage">
+					<%= image_tag(item.itemimage) %>
+				</td>
+				<td>
+					<table id="itemInfo">
+						<tr>
+							<td id="leftCell">User:</td>
+							<td><%= User.find_by_id(item.user_id).username %></td>
+						</tr>
+						<tr>
+							<td id="leftCell" colspan="2">Description:</td>
+						</tr>
+						<tr>
+							<td colspan="2"><%= sanitize(item.description) %>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
 	</div>
 <% end %>
+<div class="rightInfo">
+	STUFF TO GO HERE AT SOME POINT
+</div>
