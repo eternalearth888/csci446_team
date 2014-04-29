@@ -7,26 +7,23 @@
 	margin: auto;
 }
 
-#homeItemImage {
-	text-align: center;
-	vertical-align: middle;
-}
-
 #homeItemImage img {
-	width: 120px;
+	width: 100px;
 	height: 120px;
 }
 
-#homeRight {
-	width: 100px;
+#homeLeft {
+	text-align: center;
+	vertical-align: top;
 }
 
 #homeEntries {
-	display:inline-block;
-	float: left;
+	display: inline-block;
 	border: 1px solid gray;
-	margin: .5em;
+	margin: auto;
 	border-radius: 1em;
+	width: 175px;
+	height: 200px;
 
 	background: #feffff; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */

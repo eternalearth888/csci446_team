@@ -1,16 +1,19 @@
-<h1>Listing items</h1>
+<h1>Browsing Available items</h1>
  <% @items.each do |item| %>
 
 <table id="itemDisplay">
   <thead>
     <tr>
-      <td colspan="2"><h2><%= item.title %></h2></td>
+      <td colspan="2" id="itemTitle"><h2><%= item.title %></h2></td>
+    </tr>
+    <tr>
+      <td colspan="2" id="itemDate">Created On: <%= item.created_at %></td>
     </tr>
   </thead>
 
   <tbody>
       <tr>
-        <td><%= image_tag(item.itemimage, :width =>'120px', :height =>'120px') %></td>
+        <td id="itemImage"><%= image_tag(item.itemimage, :width =>'120px', :height =>'120px') %></td>
         <td>
           <table id="itemInfo">
               <tr>
