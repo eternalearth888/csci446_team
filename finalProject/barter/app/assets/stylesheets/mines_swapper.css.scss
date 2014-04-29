@@ -7,14 +7,9 @@
 	margin: auto;
 }
 
-#homeItemImage {
-	text-align: center;
-	vertical-align: middle;
-}
-
 #homeItemImage img {
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 125px;
 }
 
 #homeRight {
@@ -23,10 +18,11 @@
 
 #homeEntries {
 	display:inline-block;
-	float: left;
 	border: 1px solid gray;
 	margin: .5em;
 	border-radius: 1em;
+	width: 200px;
+	height: 200px;
 
 	background: #feffff; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
