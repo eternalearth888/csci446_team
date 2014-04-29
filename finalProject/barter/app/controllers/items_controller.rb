@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+
   end
 
   # GET /items/new
@@ -21,6 +22,9 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    if current_user.id != @item.user_id
+      redirect_to(:items, :notice => "You can't edit other users items")
+    end
   end
 
   # POST /items

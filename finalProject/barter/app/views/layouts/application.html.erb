@@ -22,6 +22,13 @@
 					<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
 			</li>
 			<li>
+				<% if Trade.all(:conditions => ['user1 in (?) and status = 0', current_user.id]).length > 0 %>
+					<%= link_to "YOU HAVE NEW NOTIFICATIONS", notice_path %>
+				<% else %>
+					<%= link_to "Notifications", notice_path %>
+				<% end %>
+			</li>
+			<li>
 				<%= link_to "Logout", :logout, method: :post %> 
 			</li>
 			<li>

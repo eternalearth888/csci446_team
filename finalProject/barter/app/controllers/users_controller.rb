@@ -6,12 +6,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    redirect_to :mines_swapper
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    if current_user.id != @user.id 
+      redirect_to(:mines_swapper, notice: "You can't edit other peoples profiles")
+    end
   end
 
   # GET /users/new
