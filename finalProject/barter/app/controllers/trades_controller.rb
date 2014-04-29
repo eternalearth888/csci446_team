@@ -41,7 +41,7 @@ class TradesController < ApplicationController
   # PATCH/PUT /trades/1.json
   def update
     respond_to do |format|
-      if @trade.update(trade_params)
+      if @trade.update(update_params)
         format.html { redirect_to @trade, notice: 'Trade was successfully updated.' }
         format.json { head :no_content }
       else
@@ -69,6 +69,10 @@ class TradesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trade_params
-      params.require(:trade).permit(:user1, :user2, :user1_item, :user2_item, :status, :description)
+      params.require(:trade).permit(:user1, :user2, :user1_item, :user2_item, :status, :description, :trade_id)
     end
+
+		def update_params
+			params.permit(:id, :status)
+		end
 end

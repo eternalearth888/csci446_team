@@ -1,20 +1,22 @@
 <h1>Notice page for <%=current_user.username%></h1>
 
 <h3>Here are trades offered to you(Trades this user has recieved)</h3>
-<table id='revievedTable'>
+<table id='recievedTable'>
 	<tr>
 		<td>User your trying to trade with</td>
 		<td>What they want</td>
 		<td>What they're offering</td>
 		<td>Message given on trade(trade description)</td>
 	</tr>
-	<%#pending trades should not be over 20%>
+	<%#recieving trades should not be over 20%>
 	<%#Trade.where(id = value) will return a database relation object which you can call take(n) to take up to n entries from and are put in an array %>
-	<%Trade.where("user1 = #{current_user.id}").take(20).each do |trade| %>
+	<%Trade.where("user1 = #{current_user.id} and status=0").take(20).each do |trade| %>
 		<td><%=User.find_by_id(trade.user2).username%></td>
 		<td><%=Item.find_by_id(trade.user1_item).title%></td>
 		<td><%=Item.find_by_id(trade.user2_item).title%></td>
 		<td><%=trade.description%></td>
+		<td><%=button_to('Accept trade', trade_path(:id => trade.id, :status => 1), :method => :put) %></td>
+		<td><%=button_to('Decline trade', trade_path(:id => trade.id, :status => 2), :method => :put) %></td>
 	<%end%>
 </table>
 
@@ -30,7 +32,7 @@
 	</tr>
 	<%#pending trades should not be over 20%>
 	<%#Trade.where(id = value) will return a database relation object which you can call take(n) to take up to n entries from and are put in an array %>
-	<%Trade.where("user2 = #{current_user.id}").take(20).each do |trade| %>
+	<%Trade.where("user2 = #{current_user.id} and status=0).take(20).each do |trade| %>
 		<td><%=trade.user1%></td>
 		<td><%=trade.user1_item%></td>
 		<td><%=trade.user2_item%></td>
