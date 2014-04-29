@@ -76,10 +76,14 @@ class TradesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trade
-      @trade = Trade.find(params[:id])
-      if params[:item_id] 
-        @item = Item.find_by_id(params[:item_id])
-      end
+			begin 
+				@trade = Trade.find(params[:id])
+				if params[:item_id] 
+					@item = Item.find_by_id(params[:item_id])
+				end
+			rescue ActiveRecord::RecordNotFound
+				redirect_to mines_swapper_url, :notice => "That Trade could not be found"
+			end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
