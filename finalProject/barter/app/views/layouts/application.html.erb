@@ -2,21 +2,26 @@
 <html>
 <head>
   <title>MinesSwapper Bartering System</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", "barter", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
 	<div id="banner">
-		<img id="logo" src="/public/ms_logo.png" /><%= @page_title || "MinesSwapper" %>
+		<%= link_to image_tag("ms_logo.png", :alt => "MinesSwapper"), "/" %>
+		<%= @page_title || "MinesSwapper" %>
 	</div>
 	<nav>
 		<ul id="regNav">
 			<li>
 				<a href="/items">Browse All</a>
 			</li>
-		</ul>
-		<ul id="userNav">
+			<li>
+				<%= link_to 'Create New Item', new_item_path %>
+			</li>
+			<li>
+				<a href="/trades">View Trades</a>
+			</li>
 			<li>
 				<% if current_user %>
 					<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
