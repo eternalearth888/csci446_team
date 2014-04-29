@@ -2,37 +2,31 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<% @items.each do |item| %>
-	<div class="entry">
-		<table id="itemDisplay">
-			<thead>
-				<tr>
-					<td colspan="2"><h3><%= item.title %></h3></td>
-				</tr>
-			</thead>
-			<tr>
-				<td id="itemImage">
-					<%= image_tag(item.itemimage) %>
-				</td>
-				<td>
-					<table id="itemInfo">
+<table id="homeListings">
+	<tr>
+		<td>
+			<table id="entries">
+				<% @items.each do |item| %>
+					<thead>
 						<tr>
-							<td id="leftCell">User:</td>
-							<td><%= User.find_by_id(item.user_id).username %></td>
+							<td colspan="2"><h4><%= item.title %></h4></td>
 						</tr>
+					</thead>
+					<tbody>
 						<tr>
-							<td id="leftCell" colspan="2">Description:</td>
-						</tr>
-						<tr>
-							<td colspan="2"><%= sanitize(item.description) %>
+							<td id="homeItemImage">
+								<%= image_tag(item.itemimage) %>
 							</td>
 						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</div>
-<% end %>
-<div class="rightInfo">
-	STUFF TO GO HERE AT SOME POINT
-</div>
+					</tbody>
+				<% end %>
+			</table>
+		</td>
+		<td id="homeRight">
+			RIGHT SIDE
+			<br />
+			FOR JUNK AND SHIT
+		</td>
+	</tr>
+</table>
+
