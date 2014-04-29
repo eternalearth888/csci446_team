@@ -32,7 +32,7 @@
 	</tr>
 	<%#pending trades should not be over 20%>
 	<%#Trade.where(id = value) will return a database relation object which you can call take(n) to take up to n entries from and are put in an array %>
-	<%Trade.where("user2 = #{current_user.id} and status=0).take(20).each do |trade| %>
+	<%Trade.where("user2 = #{current_user.id} and status=0").take(20).each do |trade| %>
 		<td><%=trade.user1%></td>
 		<td><%=trade.user1_item%></td>
 		<td><%=trade.user2_item%></td>

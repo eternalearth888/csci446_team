@@ -15,6 +15,7 @@ class TradesController < ApplicationController
   # GET /trades/new
   def new
     @trade = Trade.new
+    @item = Item.find(params[:item_id].to_i)
   end
 
   # GET /trades/1/edit
@@ -25,6 +26,11 @@ class TradesController < ApplicationController
   # POST /trades.json
   def create
     @trade = Trade.new(trade_params)
+    @item = Item.find(params[:item_id].to_i)
+    @trade.update_attribute(:status, 0)
+    @trade.update_attribute(:user1, @item.user_id)
+    @trade.update_attribute(:user2, current_user.id)
+    @trade.update_attribute(:user1_item, @item.id)
 
     respond_to do |format|
       if @trade.save
@@ -65,11 +71,14 @@ class TradesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_trade
       @trade = Trade.find(params[:id])
+      if params[:item_id] 
+        @item = Item.find_by_id(params[:item_id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trade_params
-      params.require(:trade).permit(:user1, :user2, :user1_item, :user2_item, :status, :description, :trade_id)
+      params.require(:trade).permit(:user1, :user2, :user1_item, :user2_item, :description)
     end
 
 		def update_params
