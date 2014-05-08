@@ -25,11 +25,13 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>
-  <% if current_user.isadmin %>
-  <div class="field">
-	<%= f.label "Make Admin" %>
-	<%= f.check_box :isadmin %>
-  </div>
+  <% if current_user %>
+  	<% if current_user.isadmin %>
+		  <div class="field">
+			<%= f.label "Make Admin" %>
+			<%= f.check_box :isadmin %>
+		  </div>
+	<% end %>
   <% end %>
   <div class="actions">
     <%= f.submit %>
